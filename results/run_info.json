@@ -1,0 +1,6 @@
+{
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "api_attempts": 251,
+  "unique_generation_prompts": 233
+}

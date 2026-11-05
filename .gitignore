@@ -1,0 +1,21 @@
+# Secrets - never commit
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local runtime data (rebuilt by the scripts)
+.cache/
+
+# Papers are downloaded by scripts/download_papers.py (not redistributed)
+data/papers/*.pdf
+
+# Workspace rules, not part of the project
+CLAUDE.md
+
+# Mock output is not a real result
+results/mock/
+results/generated.csv

@@ -1,0 +1,18 @@
+question,score,fact_share,judge_reason,answer
+q07,2,0.0,Correctly identifies internal covariate shift with minor spelling variation.,"Based on the provided passages, Batch Normalization aims to reduce internal co-variate shift."
+q07,1,1.0,Adds extra details beyond the reference answer.,"Based on the provided passages, Batch Normalization aims to reduce internal covariate shift (as well as vanishing or exploding gradients)."
+q19,1,1.0,Explains the need but is vague on how the correction is applied.,Adam needs initialization bias correction because initializing the running average with zeros causes initialization bias (or a lack of initialization bias correction would lead to initial steps that are much larger when choosing a small value of $\beta_2$ for sparse gradients). The correction is applied by dividing by this term (the term caused by initializing the running average with zeros) in algorithm 1.
+q07,1,1.0,Adds extra details not present in the reference.,"Based on the provided documents, the goal of Batch Normalization is to achieve a stable distribution of activation values throughout training, and it is also mentioned in future work that it may help with internal covariate shift (along with vanishing or exploding gradients, specifically in Recurrent Neural Networks)."
+q18,2,0.6666666666666666,Contains all key facts with correct ranking and reasons.,"Based on the provided documents, the shortcut options compared are:
+- **Option (A):** The shortcut performs identity mapping with extra zero entries padded for increasing dimensions (parameter-free).
+- **Option (B):** Projection shortcuts (done by 1×1 convolutions) are used to match dimensions, and other shortcuts are identity.
+- **Option (C):** All shortcuts are projections.
+
+**Ranking:**
+- Option B is slightly better than Option A.
+- Option C is marginally better than Option B. 
+*(Overall, all three options are considerably better than the plain counterpart, and the small differences indicate that projection shortcuts are not essential for addressing the degradation problem).*
+
+**Option decided not to use and why:**
+Option C is not used in the rest of the paper in order to reduce memory/time complexity and model sizes."
+q17,2,0.5,Contains population statistics instead of mini-batch statistics correctly.,"The normalization of activations that depends on the mini-batch allows efficient training, but is neither necessary nor desirable during inference; we want the output to depend only on the input, deterministically. For this, once the network has been trained, we use the normalization $\hat{x} = \frac{x - E[x]}{\sqrt{\text{Var}[x] + \epsilon}}$ using the population, rather than mini-batch, statistics."
