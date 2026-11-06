@@ -1,7 +1,5 @@
 # LEARNING.md: How this works, in plain language
 
-This file explains the ideas and decisions behind the project, so you can walk a client through them with confidence.
-
 ## 1. What this project is for
 
 RAG means *look it up first, then answer*. A retriever finds passages from your documents, and a language model answers using only those passages.
