@@ -19,3 +19,6 @@ CLAUDE.md
 # Mock output is not a real result
 results/mock/
 results/generated.csv
+
+# Local workspace files, not part of the project
+.vscode/

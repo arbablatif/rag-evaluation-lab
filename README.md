@@ -1,6 +1,6 @@
-# rag-evaluation-lab
+# RAG Evaluation Lab: Comparing Chunk Size, Embedding Models and Top-k
 
-A controlled experiment that compares RAG design choices on one document set and one question set: **3 chunk sizes × 2 embedding models × 2 top-k values = 12 configurations**, scored on retrieval hit rate, answer correctness and latency.
+A controlled experiment that compares retrieval-augmented generation (RAG) design choices on one document set and one question set: **3 chunk sizes × 2 embedding models × 2 top-k values = 12 configurations**, scored on retrieval hit rate, answer correctness and latency.
 
 **Main result:** long chunks with a long-context embedding model did best, at 94% answer score for 1024 tokens, Granite and top-5. Pairing long chunks with a short-context embedder wastes them, because MiniLM never reads 73% of a 1024-token chunk. With only 16 answerable questions, most individual gaps are within noise, and this README says which ones are.
 
@@ -201,3 +201,14 @@ run_experiment.py, make_report.py
 ```
 
 See [LEARNING.md](LEARNING.md) for a plain-language walkthrough of the concepts and decisions.
+
+## License
+
+The code is MIT licensed. See [LICENSE](LICENSE). Third-party datasets, papers and models are not covered and keep their own terms.
+
+## Related projects
+
+- [research-paper-rag](https://github.com/arbablatif/research-paper-rag): RAG assistant with page-level citations and refusals
+- [style-tuned-llm](https://github.com/arbablatif/style-tuned-llm): QLoRA fine-tuning for plain-English rewriting
+
+Project page: [https://arbablatif.github.io/projects/rag-evaluation-lab/](https://arbablatif.github.io/projects/rag-evaluation-lab/). More work at [arbablatif.github.io](https://arbablatif.github.io/).
